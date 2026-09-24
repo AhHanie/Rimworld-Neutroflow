@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+  <!-- Growth vat (Biotech) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="GrowthVat"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="Neutroflow.NeutroamineUsageExtension">
+          <idlePerDay>0.10</idlePerDay>
+          <activePerDay>1.5</activePerDay>
+          <activityMode>GrowthVatWorking</activityMode>
+          <starvationMode>Eject</starvationMode>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="GrowthVat"]/comps</xpath>
+    <value>
+      <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Mech gestator (Biotech) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MechGestator"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="Neutroflow.NeutroamineUsageExtension">
+          <idlePerDay>0.10</idlePerDay>
+          <activePerDay>1.0</activePerDay>
+          <activityMode>MechGestationForming</activityMode>
+          <starvationMode>Pause</starvationMode>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="MechGestator"]/comps</xpath>
+    <value>
+      <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Large mech gestator (Biotech) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="LargeMechGestator"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="Neutroflow.NeutroamineUsageExtension">
+          <idlePerDay>0.15</idlePerDay>
+          <activePerDay>1.5</activePerDay>
+          <activityMode>MechGestationForming</activityMode>
+          <starvationMode>Pause</starvationMode>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="LargeMechGestator"]/comps</xpath>
+    <value>
+      <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Gene extractor (Biotech) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="GeneExtractor"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="Neutroflow.NeutroamineUsageExtension">
+          <idlePerDay>0.10</idlePerDay>
+          <activePerDay>1.0</activePerDay>
+          <activityMode>GeneExtractionWorking</activityMode>
+          <starvationMode>Pause</starvationMode>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="GeneExtractor"]/comps</xpath>
+    <value>
+      <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

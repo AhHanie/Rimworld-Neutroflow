@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+  <!-- Biosculpter pod (Ideology) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="BiosculpterPod"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="Neutroflow.NeutroamineUsageExtension">
+          <idlePerDay>0.10</idlePerDay>
+          <activePerDay>1.0</activePerDay>
+          <activityMode>BiosculpterOccupied</activityMode>
+          <starvationMode>Pause</starvationMode>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="BiosculpterPod"]/comps</xpath>
+    <value>
+      <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

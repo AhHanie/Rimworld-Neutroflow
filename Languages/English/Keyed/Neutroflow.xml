@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <Neutroflow_RequiredRate>Neutroamine required: {0} {1}/day</Neutroflow_RequiredRate>
+    <Neutroflow_Status>Neutroamine status: {0}</Neutroflow_Status>
+    <Neutroflow_StatusStarved>starved</Neutroflow_StatusStarved>
+    <Neutroflow_StatusActive>active</Neutroflow_StatusActive>
+    <Neutroflow_StatusReady>ready</Neutroflow_StatusReady>
+
+    <Neutroflow_CasketEjectedNoLiquid>{0} was ejected from cryptosleep: the neutroamine network ran dry.</Neutroflow_CasketEjectedNoLiquid>
+    <Neutroflow_GrowthVatEjectedNoLiquid>{0} was ejected from the growth vat: the neutroamine network ran dry.</Neutroflow_GrowthVatEjectedNoLiquid>
+    <Neutroflow_EmbryoDestroyedNoLiquid>{0} was destroyed: the growth vat's neutroamine network ran dry.</Neutroflow_EmbryoDestroyedNoLiquid>
+    <Neutroflow_BioReactorEjectedNoLiquid>{0} was ejected from the bioreactor: the neutroamine network ran dry.</Neutroflow_BioReactorEjectedNoLiquid>
+    <Neutroflow_JobFailedNoLiquid>{0} could not be placed in {1}: the neutroamine network is out of liquid.</Neutroflow_JobFailedNoLiquid>
+</LanguageData>

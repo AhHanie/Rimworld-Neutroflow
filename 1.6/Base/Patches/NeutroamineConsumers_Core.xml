@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+  <!-- Cryptosleep casket (Core) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="CryptosleepCasket"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="Neutroflow.NeutroamineUsageExtension">
+          <idlePerDay>0.05</idlePerDay>
+          <activePerDay>0.5</activePerDay>
+          <activityMode>CryptosleepOccupied</activityMode>
+          <starvationMode>Eject</starvationMode>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="CryptosleepCasket"]/comps</xpath>
+    <value>
+      <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

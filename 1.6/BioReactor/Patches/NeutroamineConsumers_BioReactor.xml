@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+  <!-- BioReactor (2x2) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="BioReactor"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="Neutroflow.NeutroamineUsageExtension">
+          <idlePerDay>0.10</idlePerDay>
+          <activePerDay>1.0</activePerDay>
+          <activityMode>BioReactorOccupied</activityMode>
+          <starvationMode>Eject</starvationMode>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="BioReactor"]/comps</xpath>
+    <value>
+      <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- BioReactor (3x3, circle) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="BioReactorCircleLarge"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="Neutroflow.NeutroamineUsageExtension">
+          <idlePerDay>0.15</idlePerDay>
+          <activePerDay>1.5</activePerDay>
+          <activityMode>BioReactorOccupied</activityMode>
+          <starvationMode>Eject</starvationMode>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="BioReactorCircleLarge"]/comps</xpath>
+    <value>
+      <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- BioReactor (3x3, square) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="BioReactorBig"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="Neutroflow.NeutroamineUsageExtension">
+          <idlePerDay>0.15</idlePerDay>
+          <activePerDay>1.5</activePerDay>
+          <activityMode>BioReactorOccupied</activityMode>
+          <starvationMode>Eject</starvationMode>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="BioReactorBig"]/comps</xpath>
+    <value>
+      <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- BioReactor (4x4, circle) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="BioReactorCircleEX"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="Neutroflow.NeutroamineUsageExtension">
+          <idlePerDay>0.20</idlePerDay>
+          <activePerDay>2.0</activePerDay>
+          <activityMode>BioReactorOccupied</activityMode>
+          <starvationMode>Eject</starvationMode>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="BioReactorCircleEX"]/comps</xpath>
+    <value>
+      <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- BioReactor (4x4, square) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="BioReactorEx"]</xpath>
+    <value>
+      <modExtensions>
+        <li Class="Neutroflow.NeutroamineUsageExtension">
+          <idlePerDay>0.20</idlePerDay>
+          <activePerDay>2.0</activePerDay>
+          <activityMode>BioReactorOccupied</activityMode>
+          <starvationMode>Eject</starvationMode>
+        </li>
+      </modExtensions>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="BioReactorEx"]/comps</xpath>
+    <value>
+      <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>
