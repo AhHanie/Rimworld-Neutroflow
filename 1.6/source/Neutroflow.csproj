@@ -88,6 +88,9 @@
     <Compile Include="Patches\NeutroamineJobFailureUtility.cs" />
     <Compile Include="Patches\BioReactorCompat.cs" />
     <Compile Include="Patches\Patch_Building_BioReactor.cs" />
+    <Compile Include="IVDripFacilityUtility.cs" />
+    <Compile Include="Patches\DraincasketCompat.cs" />
+    <Compile Include="Patches\Patch_Draincasket.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

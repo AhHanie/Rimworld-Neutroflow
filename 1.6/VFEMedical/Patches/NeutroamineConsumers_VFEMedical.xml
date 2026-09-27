@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+  <!-- Intravenous drip stand (VFE Medical) -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="Facility_IVDrip"]/modExtensions</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Facility_IVDrip"]</xpath>
+      <value>
+        <modExtensions>
+          <li Class="Neutroflow.NeutroamineUsageExtension">
+            <idlePerDay>0.05</idlePerDay>
+            <activePerDay>0.5</activePerDay>
+            <activityMode>IVDripTreating</activityMode>
+            <starvationMode>Pause</starvationMode>
+          </li>
+        </modExtensions>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="Facility_IVDrip"]/modExtensions</xpath>
+      <value>
+        <li Class="Neutroflow.NeutroamineUsageExtension">
+          <idlePerDay>0.05</idlePerDay>
+          <activePerDay>0.5</activePerDay>
+          <activityMode>IVDripTreating</activityMode>
+          <starvationMode>Pause</starvationMode>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Facility_IVDrip"]/comps</xpath>
+    <value>
+      <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

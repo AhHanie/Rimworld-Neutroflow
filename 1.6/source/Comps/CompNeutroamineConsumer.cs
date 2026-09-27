@@ -51,6 +51,7 @@ namespace Neutroflow
             HasActiveWork = false;
 
             parent.Map.GetComponent<MapComponent_NeutroflowAllocator>()?.Register(this);
+            adapter?.onSupplyChanged?.Invoke(parent, IsStarved);
         }
 
         public override void PostDeSpawn(Map map, DestroyMode mode = DestroyMode.Vanish)
@@ -63,12 +64,14 @@ namespace Neutroflow
         {
             IsStarved = !granted;
             HasActiveWork = granted && wantedActive;
+            adapter?.onSupplyChanged?.Invoke(parent, IsStarved);
         }
 
         internal void Notify_Unready()
         {
             IsStarved = true;
             HasActiveWork = false;
+            adapter?.onSupplyChanged?.Invoke(parent, IsStarved);
         }
 
         public bool HasConfirmedShortage()

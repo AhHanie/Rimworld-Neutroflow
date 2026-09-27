@@ -19,6 +19,7 @@ namespace Neutroflow
         private void Init()
         {
             Patches.BioReactorCompat.Initialize();
+            Patches.DraincasketCompat.Initialize();
             new Harmony("sk.neutroflow").PatchAll();
         }
     }

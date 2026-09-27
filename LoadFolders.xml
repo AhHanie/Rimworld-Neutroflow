@@ -5,6 +5,9 @@
     <li IfModActive="Ludeon.RimWorld.Ideology">1.6/Ideology</li>
     <li IfModActive="Ludeon.RimWorld.Biotech">1.6/Biotech</li>
     <li IfModActive="Mlie.BioReactor">1.6/BioReactor</li>
+    <li IfModActive="VanillaExpanded.VFEMedical">1.6/VFEMedical</li>
+    <li IfModActive="vanillaracesexpanded.sanguophage">1.6/Sanguophage</li>
+    <li IfModActive="vanillaexpanded.gravship">1.6/Gravship</li>
     <li>/</li>
   </v1.6>
 </loadFolders>

@@ -10,5 +10,6 @@
     <Neutroflow_GrowthVatEjectedNoLiquid>{0} was ejected from the growth vat: the network ran out of neutroamine.</Neutroflow_GrowthVatEjectedNoLiquid>
     <Neutroflow_EmbryoDestroyedNoLiquid>{0} was destroyed: the growth vat's network ran out of neutroamine.</Neutroflow_EmbryoDestroyedNoLiquid>
     <Neutroflow_BioReactorEjectedNoLiquid>{0} was ejected from the bioreactor: the network ran out of neutroamine.</Neutroflow_BioReactorEjectedNoLiquid>
+    <Neutroflow_DraincasketEjectedNoLiquid>{0} was ejected from the draincasket: the network ran out of neutroamine.</Neutroflow_DraincasketEjectedNoLiquid>
     <Neutroflow_JobFailedNoLiquid>{0} could not be placed in {1}: the network is out of neutroamine.</Neutroflow_JobFailedNoLiquid>
 </LanguageData>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+  <!-- Draincasket (Sanguophage) -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VRE_Draincasket"]/modExtensions</xpath>
+    <nomatch Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VRE_Draincasket"]</xpath>
+      <value>
+        <modExtensions>
+          <li Class="Neutroflow.NeutroamineUsageExtension">
+            <idlePerDay>0.10</idlePerDay>
+            <activePerDay>1.0</activePerDay>
+            <activityMode>DraincasketOccupied</activityMode>
+            <starvationMode>Eject</starvationMode>
+          </li>
+        </modExtensions>
+      </value>
+    </nomatch>
+    <match Class="PatchOperationAdd">
+      <xpath>Defs/ThingDef[defName="VRE_Draincasket"]/modExtensions</xpath>
+      <value>
+        <li Class="Neutroflow.NeutroamineUsageExtension">
+          <idlePerDay>0.10</idlePerDay>
+          <activePerDay>1.0</activePerDay>
+          <activityMode>DraincasketOccupied</activityMode>
+          <starvationMode>Eject</starvationMode>
+        </li>
+      </value>
+    </match>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="VRE_Draincasket"]/comps</xpath>
+    <value>
+      <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+        <pipeNet>VREA_NeutroamineNet</pipeNet>
+      </li>
+    </value>
+  </Operation>
+
+</Patch>

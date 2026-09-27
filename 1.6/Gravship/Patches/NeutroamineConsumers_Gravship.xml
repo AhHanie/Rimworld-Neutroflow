@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Patch>
+
+  <!-- Compact biosculpter pod (Gravship, only defined when Ideology is also active) -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>Defs/ThingDef[defName="VGE_CompactBiosculpterPod"]</xpath>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationConditional">
+          <xpath>Defs/ThingDef[defName="VGE_CompactBiosculpterPod"]/modExtensions</xpath>
+          <nomatch Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VGE_CompactBiosculpterPod"]</xpath>
+            <value>
+              <modExtensions>
+                <li Class="Neutroflow.NeutroamineUsageExtension">
+                  <idlePerDay>0.10</idlePerDay>
+                  <activePerDay>1.0</activePerDay>
+                  <activityMode>BiosculpterOccupied</activityMode>
+                  <starvationMode>Pause</starvationMode>
+                </li>
+              </modExtensions>
+            </value>
+          </nomatch>
+          <match Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="VGE_CompactBiosculpterPod"]/modExtensions</xpath>
+            <value>
+              <li Class="Neutroflow.NeutroamineUsageExtension">
+                <idlePerDay>0.10</idlePerDay>
+                <activePerDay>1.0</activePerDay>
+                <activityMode>BiosculpterOccupied</activityMode>
+                <starvationMode>Pause</starvationMode>
+              </li>
+            </value>
+          </match>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="VGE_CompactBiosculpterPod"]/comps</xpath>
+          <value>
+            <li Class="Neutroflow.CompProperties_NeutroamineConsumer">
+              <pipeNet>VREA_NeutroamineNet</pipeNet>
+            </li>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+
+</Patch>

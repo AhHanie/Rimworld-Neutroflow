@@ -13,6 +13,8 @@ namespace Neutroflow
         public const string MechGestationForming = "MechGestationForming";
         public const string GeneExtractionWorking = "GeneExtractionWorking";
         public const string BioReactorOccupied = "BioReactorOccupied";
+        public const string IVDripTreating = "IVDripTreating";
+        public const string DraincasketOccupied = "DraincasketOccupied";
 
         private static readonly System.Reflection.MethodInfo GrowthVatFinishPawn =
             AccessTools.Method(typeof(Building_GrowthVat), "FinishPawn");
@@ -42,6 +44,49 @@ namespace Neutroflow
             NeutroamineActivityAdapters.Register(BioReactorOccupied,
                 parent => (parent as Building_Casket)?.HasAnyContents ?? false,
                 onActiveDenied: Notify_BioReactorDenied);
+
+            NeutroamineActivityAdapters.Register(IVDripTreating, IsIVDripTreating,
+                onSupplyChanged: IVDripFacilityUtility.Notify_SupplyChanged);
+        }
+
+        private static bool IsIVDripTreating(Thing parent)
+        {
+            var facility = parent.TryGetComp<CompFacility>();
+            if (facility == null)
+                return false;
+
+            var linked = facility.LinkedBuildings;
+            for (var i = 0; i < linked.Count; i++)
+            {
+                if (linked[i] is Building_Bed bed && bed.AnyOccupants)
+                    return true;
+            }
+            return false;
+        }
+
+        internal static void RegisterDraincasketOccupied()
+        {
+            NeutroamineActivityAdapters.Register(DraincasketOccupied, IsDraincasketOccupied, onActiveDenied: Notify_DraincasketDenied);
+        }
+
+        private static bool IsDraincasketOccupied(Thing parent)
+        {
+            var comp = Patches.DraincasketCompat.FindComp(parent);
+            return comp != null && Patches.DraincasketCompat.GetOccupant(comp) != null;
+        }
+
+        private static void Notify_DraincasketDenied(Thing parent)
+        {
+            var comp = Patches.DraincasketCompat.FindComp(parent);
+            if (comp == null)
+                return;
+
+            var occupant = Patches.DraincasketCompat.GetOccupant(comp);
+            if (occupant == null)
+                return;
+
+            Patches.DraincasketCompat.Eject(comp, parent.Map);
+            Messages.Message("Neutroflow_DraincasketEjectedNoLiquid".Translate(occupant.LabelShortCap), parent, MessageTypeDefOf.NegativeEvent, historical: false);
         }
 
         private static void Notify_CasketDenied(Thing parent)
