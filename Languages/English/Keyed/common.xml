@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
     <Neutroflow.LoadingLabel>Neutroflow Loading</Neutroflow.LoadingLabel>
+    <Neutroflow.Settings.Title>Neutroflow</Neutroflow.Settings.Title>
+    <Neutroflow.Settings.PassiveDrainEnabled>Enable passive drain</Neutroflow.Settings.PassiveDrainEnabled>
+    <Neutroflow.Settings.PassiveDrainEnabled.Tooltip>When enabled, idle devices continuously draw a small amount of neutroamine. When disabled, idle devices draw none; devices that are actively working still consume neutroamine.</Neutroflow.Settings.PassiveDrainEnabled.Tooltip>
 </LanguageData>

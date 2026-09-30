@@ -32,7 +32,9 @@ namespace Neutroflow
 
         public bool WantsActive => adapter != null && adapter.isActive(parent);
 
-        public float RequiredPerDay => ext == null ? 0f : (WantsActive ? ext.activePerDay : ext.idlePerDay);
+        public float RequiredPerDay => ext == null
+            ? 0f
+            : (WantsActive ? ext.activePerDay : (ModSettings.PassiveDrainEnabled ? ext.idlePerDay : 0f));
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {

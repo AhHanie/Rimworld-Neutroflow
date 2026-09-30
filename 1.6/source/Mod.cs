@@ -13,7 +13,18 @@ namespace Neutroflow
     {
         public Mod(ModContentPack content) : base(content)
         {
+            GetSettings<ModSettings>();
             LongEventHandler.QueueLongEvent(Init, "Neutroflow.LoadingLabel", doAsynchronously: true, null);
+        }
+
+        public override string SettingsCategory()
+        {
+            return "Neutroflow.Settings.Title".Translate();
+        }
+
+        public override void DoSettingsWindowContents(Rect inRect)
+        {
+            ModSettingsWindow.Draw(inRect);
         }
 
         private void Init()

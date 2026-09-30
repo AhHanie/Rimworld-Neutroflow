@@ -91,8 +91,7 @@ namespace Neutroflow
                 }
 
                 var wantedActive = comp.WantsActive;
-                var perDay = wantedActive ? comp.Extension.activePerDay : comp.Extension.idlePerDay;
-                var amount = perDay * AllocationInterval / 60000f;
+                var amount = comp.RequiredPerDay *AllocationInterval / 60000f;
 
                 bool granted;
                 if (amount <= 0f)
